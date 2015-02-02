@@ -1,84 +1,33 @@
+<html>
 <head>
-  <style type="text/css">
-  	.navbar > a {
-  		color: #48D1CC;
-  	}
-  	a:link {
-    	text-decoration: none;
-    }
-	a:visited {
-		text-decoration: none;
-	}
-	a:hover {
-    	text-decoration: underline;
-    	color: white;
-    }
-	a:active {
-    	text-decoration: none;
-	}
-    body {
-	  	text-align: center;
-	    color: purple;
-	    background-color: #48D1CC; 
-		font-family: Georgia;
-		margin: 0;
-		padding: 0;
-	}
-	ul.navbar {
-		background-color: purple;
-		color: black;
-		text-align: left;
-		margin: 0;
-		width: 100%;
-		height: 70px;
-		font-size: 2.5em;
-	}
-
-  </style>
+<style>
+table, th, td {
+	border: 1px solid blue;
+	width: 1000px;
+	height: 50px;
+}
+</style>
 </head>
 
 <body>
-	<ul class="navbar">
-	  <a href="index">Home</a>
-	  <a href="about">About Me</a>
-	</ul>
+<h1> This is my home page </h1>
 
-	<h1 style="font-size:3.5em">My Travels</h1>
-
-	<p style="color:blue;font-size:1.5em" >Puerto Rico</p>
-
-	<img src="<%= image_path("PRdinner.JPG")  %>" width=275 height=225/>
-	<img src="<%= image_path("pr.JPG")  %>" width=275 height=225/>
-	<img src="<%= image_path("PRrainforest.JPG")  %>" width=275 height=225/>
-
-	<p style="color:crimson;font-size:1.5em" >Chicago</p>
-	<img src="http://www.socrata.com/wp-content/uploads/2014/06/chicago-dreary-bean-1.jpg" width=275 height=225/> 
-	<img src="<%= image_path("chicago.JPG")  %>" width=275 height=225/>
-	<img src="<%= image_path("chi.JPG")  %>" width=275 height=225/>
-
-	<p style="color:black;font-size:1.5em" >Florida</p>
-
-	<img src="<%= image_path("florida.JPG")  %>" width=275 height=225/> 
-	<img src="<%= image_path("destin.JPG")  %>" width=275 height=225/>
-	<img src="<%= image_path("boat.JPG")  %>" width=275 height=225/>
-
-	<p style="color:black;font-size:1.5em" >New Orleans</p>
-
-	<img src="<%= image_path("no.JPG")  %>" width=275 height=225/> 
-	<img src="<%= image_path("noparade.JPG")  %>" width=275 height=225/>
-	<img src="<%= image_path("skull.JPG")  %>" width=275 height=225/>
-
-
-	<p style="color:blue;font-size:1.5em" >South Korea</p>
-	<img src="http://www.deshow.net/d/file/travel/2009-05/travel-tour-south-korea-landscape-561-8.jpg" width=275 height=225/>
-	<img src="http://2.bp.blogspot.com/-16Ry8MyTSnw/To8z_h691CI/AAAAAAAAACI/DHNu2noc0Ds/s1600/South+Korea.jpg" width=275 height=225/>
-	<img src="http://www.korea.net/upload/content/editImage/Food_dinner_eng.jpg" width=275 height=225/>
-
-	<p style="color:crimson;font-size:1.5em" >Germany</p>
-	<img src="http://reichsamt.info/bilder/Reichstagsgebaeude_Berlin.jpg" width=275 height=225/>
-	<img src="http://cdn.funcheap.com/wp-content/uploads/2013/05/Sausages-and-Bier1.jpg" width=275 height=225/>
-	<img src="http://images.cityhdwallpapers.com/images/1920x1080/Germany%20city%20architectural%20art.jpg" width=275 height=225/>
-
-<p>updated 1/19/15</p>
+<table>
+  <tr>
+    <% @united_states.each do |key,value| %>
+	  <th><%= key %></th>
+    <% end %>
+  </tr>
+  <tr>
+    <% @united_states.each do |key,value| %>      
+      <% if value.kind_of?(Array) %>
+          <td><%= value.join(", ") %></td>
+      <% else %>
+         <td><%= value %></td>
+      <% end %> 
+    <% end %>
+  </tr>
+</table>
 
 </body>
+</html>
