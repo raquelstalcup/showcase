@@ -1,0 +1,25 @@
+<h2 style= "color:black; text-align: left; margin-left:25px;">Portfolios </h2> 
+
+<h1>My Portfolio</h1>
+<br/><br/><br/>
+<div class="row">
+    <% @portfolios.each do |portfolio| %>
+      <div class="col-md-4">
+       <div class="panel panel-default">
+        <div class="panel-body">
+         <h2><%= portfolio.work %></h2>
+         <h3><%= portfolio.description %></h3>
+       
+         <div class="btn-group">
+          <%= link_to 'Show', portfolio, class: "btn btn-default" %>
+          <%= link_to 'Edit', edit_portfolio_path(portfolio), class: "btn btn-default" %>
+          <%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+         </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'New Portfolio', new_portfolio_path, class: "btn btn-primary" %>
+

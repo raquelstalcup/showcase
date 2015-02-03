@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Showcase</title>
+  <title>Showcase</title> <!-- This is the title for my tab -->
+  <!-- These links are used to utilize bootstrap -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
+
+<!-- This is where I start my page styling -->
+  <style>
+    body {background-color: #E8E8E8;
+      text-align: center;
+      color: purple;
+      font-family: Georgia;
+      margin: 0;
+      padding: 0;
+      }
+    .images { width:250px; 
+      height:200px;
+      border: solid 2px #787878;
+      border-radius: 25px;
+      }
+</style>
+
 </head>
 <body>
 
-<style>
-  	body {background-color: lightblue;}
-  	body {
-	  	text-align: center;
-	    color: purple;
-	    <!--
-	    background-color: <%= @background %>; -->
-		font-family: Georgia;
-		margin: 0;
-		padding: 0;}
-  ul.navbar {
-		background-color: lightgrey;
-		color: black;
-		text-align: left;
-		margin: 0;
-		width: 100%;
-		height: 70px;
-		font-size: 2.5em;
-	}
-  .images {	width:250px; 
-  			height:200px;
-  			border: solid 2px yellow;
-  			border-radius: 25px;
-  	  		} 
+<!-- This is my bootstrap nav bar -->
 
-</style>
-
- 	
-<ul class="navbar">
-	  <%= link_to 'Welcome', '/' %>
-	  <%= link_to 'About', '/about' %>
-	  <%= link_to 'Contact', '/contact' %>
-</ul>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/portfolios">Portfolios</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <%= yield %>
 

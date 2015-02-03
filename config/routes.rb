@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  resources :portfolios
+
   root 'welcome#index'
   get 'about' => 'welcome#about'
   get 'index' => 'welcome#index'
   get 'contact' => 'welcome#contact'
+  get 'portfolio' => 'welcome#portfolio'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

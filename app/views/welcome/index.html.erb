@@ -1,17 +1,42 @@
 <html>
 <head>
 <style>
-table, th, td {
-	border: 1px solid blue;
-	width: 1000px;
-	height: 50px;
-}
+  table, th, td {
+	 border: 1px solid black;
+	 width: 1000px;
+	 height: 50px;
+    text-align: center;
+    margin-left: 25%;
+   }
 </style>
 </head>
 
 <body>
-<h1> This is my home page </h1>
+<h2 style= "color:black; text-align: left; margin-left:25px;">Home </h2> 
 
+<h1>Culinary Travels</h1>
+<br/>
+<h1>Korean food</h1>
+<br/><br/><br/>
+
+  <% @korean.each do |pic| %>
+    <%= image_tag pic, class: "images" %> 
+  <% end %>
+ 
+<br/><br/>    
+<p>Kalbi, Bibim-Bop, and Banchan are popular Korean dishes </p>
+<br/>
+<p>Kalbi is Korean Barbequed Beef Short Ribs.</p>
+<p>The short ribs are marinated in soy sauce, brown sugar, sesame oil, garlic, and mirin</p>
+<p>and grilled over an open flame or cooked on a cast iron grill.</p>
+<br/>
+<p>Bibim-Bop, which means "mixed rice", consists of a bowl of rice topped with a variety of vegetables,</p>
+<p>korean pepper paste, sunny-side-up egg, and sliced meat.</p>
+<br/>
+<p>Banchan are side dishes that are served alongside all Korean meals</p>
+
+
+<!-- This activity was to create a table using hash
 <table>
   <tr>
     <% @united_states.each do |key,value| %>
@@ -28,6 +53,8 @@ table, th, td {
     <% end %>
   </tr>
 </table>
+-->
+
 
 </body>
 </html>
