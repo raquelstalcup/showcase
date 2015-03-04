@@ -1,0 +1,49 @@
+wed 2.4
+
+to push to production, must also run in heroku
+heroku run rake db:migrate
+
+command to run rails console, command is heroku run rails c
+this would give you a rails terminal on your server
+you can do normal irb commands
+
+plural vs. singular, if they hold multiple items, should be plural
+
+request - response cycle: url request to router send to controller:actions
+feeds from veiw & model:db, then sends a response back to the URL/browser
+
+filter w/ query string using param
+  def index
+    # @destinations = Destination.all
+    @destinations = Destination.where(country: params[:country].titlelize)
+  end
+
+how to use query and link_to
+
+<%= link_to "All", destinations_path %>
+# /destinations
+<%= link_to "New Zealand", controller: "destinations", country: "new_zealand" %>
+# /destinations?country=new_zealand
+<%= link_to "France", controller: "destinations", country: "france" %>
+# /destinations?country=france
+
+dynamic link
+1st- have all destinations in one hand, set up array
+2nd- loop through those destinations
+????????????????????
+
+
+CB API gem - used to talk to the jobs API here at CB
+when you talk from your rails app to an API, you will need a key/password
+token identifies you and tracks your usage
+API is an web app that sits on the internet, it responds with raw data, talks to another app
+
+LF - mytoken
+WDHM8FB6YFL8SGBCDJLF
+https://github.com/cbdr/ruby-cb-api
+documentation to use the gem
+
+
+
+
+
